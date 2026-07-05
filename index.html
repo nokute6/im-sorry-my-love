@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffeef2; /* Soft romantic pink background */
+            color: #333;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 0 auto;
+        }
+        h1 {
+            color: #d63384;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .btn {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #b02a6b;
+            transform: scale(1.05);
+        }
+        .btn-no {
+            background-color: #6c757d;
+        }
+        .btn-no:hover {
+            background-color: #5a6268;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- SCREEN 1: THE APOLOGY -->
+        <div id="screen1">
+            <h1>Hey Nyasha my love, I'm Sorry. 💔</h1>
+            <p>I know things have been rough, and I really messed up. I wanted to build something completely from scratch just to show you how much you mean to me and how much I want to fix this.</p>
+            <p>Remember when we first met and I was shy but gathered my guts just to kiss you and you said , on normal bases you wouldnt let something like that happen or when I said I think its a company and you started making fun of me? I want more moments like that.
+
+ Can I ask you a few quick questions?</p>
+            <button class="btn" onclick="nextScreen(1, 2)">Yes, go ahead</button>
+        </div>
+
+        <!-- SCREEN 2: QUESTION 1 -->
+        <div id="screen2" class="hidden">
+            <h1>Question 1 🍕</h1>
+            <p>If I promise to let you choose any activity you wanna do when I ask to see you will you agree to meet up with me again?</p>
+            <button class="btn" onclick="nextScreen(2, 3)">Deal 🤝</button>
+            <button class="btn btn-no" onclick="nextScreen(2, 3)">Maybe...</button>
+        </div>
+
+        <!-- SCREEN 3: QUESTION 2 -->
+        <div id="screen3" class="hidden">
+            <h1>Question 2 🧸</h1>
+            <p>Do you miss when I flirt with you using shona or call you mon coeur even just a tiny, microscopic bit?</p>
+            <button class="btn" onclick="nextScreen(3, 4)">Yes</button>
+            <button class="btn btn-no" onclick="nextScreen(3, 4)">No (But I'm lying)</button>
+        </div>
+
+        <!-- SCREEN 4: FINAL SCREEN -->
+        <div id="screen4" class="hidden">
+            <h1>Thank you for listening. ❤️</h1>
+            <p>I don't expect everything to be fixed instantly, but I love you and I'm ready to do the work to earn your trust back.</p>
+            <p>Can we meet one more time? Text me YESS if you reached this part and you agree to meet up with me .</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple function to switch between the questions
+        function nextScreen(current, next) {
+            document.getElementById('screen' + current).classList.add('hidden');
+            document.getElementById('screen' + next).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
